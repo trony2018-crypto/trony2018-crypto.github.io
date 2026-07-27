@@ -1,176 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="tUZgnRuVb3T6g6v-G6kdM5ZSDvsxjGFrSP-NoYCAh1s" />
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Free Online Games — Best Browser Games No Download</title>
-    
+    <title>My 3D Game Project — Three.js GTA Prototype</title>
     <style>
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: #0b0c10; 
-            color: #c5c6c7; 
-            text-align: center; 
-            padding: 20px; 
+        body {
             margin: 0;
-        }
-        h1 { 
-            color: #66fcf1; 
-            font-size: 2.8rem;
-            margin-bottom: 5px;
-            text-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
-        }
-        .subtitle {
-            color: #45f3ff;
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-        }
-        .games-grid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 50px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .game-card { 
-            background: #1f2833; 
-            border: 2px solid #45f3ff; 
-            border-radius: 16px; 
-            padding: 20px; 
-            width: 100%;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            box-sizing: border-box;
-        }
-        .game-card h2 {
-            margin-top: 0;
-            color: #ffffff;
-            font-size: 1.6rem;
-        }
-        .iframe-wrapper {
-            position: relative;
-            width: 100%;
-            background: #000;
-            border-radius: 8px;
+            padding: 0;
             overflow: hidden;
+            background-color: #050508;
+            font-family: 'Segoe UI', sans-serif;
+            color: #ffffff;
+            text-align: center;
         }
-        /* Пропорции для экрана игры (16:9) */
-        .ratio-16-9 {
-            padding-top: 56.25%; 
-        }
-        iframe { 
+        #info {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 10px;
             width: 100%;
-            height: 100%;
-            border: none; 
+            z-index: 100;
+            pointer-events: none;
         }
-        .controls {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-        }
-        .fullscreen-btn {
-            background-color: #66fcf1;
-            color: #0b0c10;
-            border: none;
-            padding: 10px 25px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 10px rgba(102, 252, 241, 0.3);
-        }
-        .fullscreen-btn:hover {
-            background-color: #45f3ff;
-            transform: scale(1.05);
-        }
-        .seo-section { 
-            max-width: 860px; 
-            margin: 60px auto 20px auto; 
-            background: #151a21;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: left;
-            line-height: 1.8; 
-            color: #9aa0a6;
-            border-left: 4px solid #66fcf1;
-        }
-        .seo-section h3 {
-            color: #66fcf1;
-            margin-top: 0;
+        h1 { margin: 0 0 5px 0; color: #66fcf1; font-size: 1.8rem; text-shadow: 0 0 10px rgba(102,252,241,0.5); }
+        p { margin: 0; color: #8f9cae; font-size: 1rem; }
+        /* Контейнер для 3D графики */
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+            display: block;
         }
     </style>
+    <!-- Подключаем 3D движок Three.js -->
+    <script src="https://cloudflare.com"></script>
 </head>
 <body>
 
-    <h1>Free Online Games Hub</h1>
-    <p class="subtitle">Welcome to trony2018-crypto game portal! Play the best browser games instantly.</p>
-
-    <div class="games-grid">
-        
-        <!-- GAME 1: PACMAN -->
-        <div class="game-card">
-            <h2>1. Retro Classic: Pac-Man</h2>
-            <div class="iframe-wrapper ratio-16-9">
-                <iframe id="game-pacman" src="https://github.io" allowfullscreen></iframe>
-            </div>
-            <div class="controls">
-                <button class="fullscreen-btn" onclick="openFullscreen('game-pacman')">🖵 Open Fullscreen</button>
-            </div>
-        </div>
-
-        <!-- GAME 2: 2048 -->
-        <div class="game-card">
-            <h2>2. Puzzle: 2048 Legend</h2>
-            <div class="iframe-wrapper ratio-16-9">
-                <iframe id="game-2048" src="https://play2048.co" allowfullscreen></iframe>
-            </div>
-            <div class="controls">
-                <button class="fullscreen-btn" onclick="openFullscreen('game-2048')">🖵 Open Fullscreen</button>
-            </div>
-        </div>
-
-        <!-- GAME 3: FLAPPY BIRD -->
-        <div class="game-card">
-            <h2>3. Arcade: Flappy Bird</h2>
-            <div class="iframe-wrapper ratio-16-9">
-                <iframe id="game-flappy" src="https://flappybird.io" allowfullscreen></iframe>
-            </div>
-            <div class="controls">
-                <button class="fullscreen-btn" onclick="openFullscreen('game-flappy')">🖵 Open Fullscreen</button>
-            </div>
-        </div>
-
+    <div id="info">
+        <h1>Project: 3D GTA (Pre-Alpha 0.1)</h1>
+        <p>Use <b>W, A, S, D</b> or <b>Arrow Keys</b> to move your 3D Character</p>
     </div>
 
-    <!-- SEO Text in English for Google Search Robots -->
-    <div class="seo-section">
-        <h3>How to play free browser games online?</h3>
-        <p>Our gaming platform offers the ultimate collection of top HTML5 games you can play directly in your web browser. No registration, no downloads, and no installation required! Whether you love retro arcade simulators, logical mathematical puzzles, or fast-paced casual games, we have it all. Click the "Open Fullscreen" button under any game box to enjoy a distraction-free immersive gaming experience. All games are completely optimized for PC, laptops, and mobile screens. Enjoy your stay and have fun on our safe website!</p>
-    </div>
+    <!-- Сюда движок будет выводить 3D картинку -->
+    <div id="game-container"></div>
 
-    <!-- Script for Fullscreen functionality -->
     <script>
-        function openFullscreen(id) {
-            var element = document.getElementById(id);
-            if (element.requestFullscreen) {
-                element.requestFullscreen();
-            } else if (element.mozRequestFullScreen) { /* Firefox */
-                element.mozRequestFullScreen();
-            } else if (element.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-                element.webkitRequestFullscreen();
-            } else if (element.msRequestFullscreen) { /* IE/Edge */
-                element.msRequestFullscreen();
-            }
-        }
-    </script>
+        // 1. НАСТРОЙКА СЦЕНЫ, КАМЕРЫ И ОТРИСОВЩИКА
+        const container = document.getElementById('game-container');
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x0a0c14); // Цвет неба/окружения
 
+        // Камера: угол обзора 45 градусов, пропорции экрана
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+        // Ставим камеру сверху и сзади (как в играх от третьего лица)
+        camera.position.set(0, 15, 25); 
+        camera.lookAt(0, 0, 0);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMap.enabled = true; // Включаем тени
+        container.appendChild(renderer.domElement);
+
+        // 2. ОСВЕЩЕНИЕ (Без света в 3D всё будет абсолютно черным)
+        const ambientLight = new THREE.AmbientLight(0x404040, 1.5); // Общий мягкий свет
+        scene.add(ambientLight);
+
+        const dirLight = new THREE.DirectionalLight(0xffffff, 1.2); // Солнечный свет, дающий тени
+        dirLight.position.set(10, 20, 15);
+        dirLight.castShadow = true;
+        scene.add(dirLight);
+
+        // 3. СОЗДАНИЕ МИРА (Земля/Дорога)
+        const floorGeometry = new THREE.PlaneGeometry(100, 100);
+        const floorMaterial = new THREE.MeshStandardMaterial({ color: 0x1f2833, roughness: 0.8 });
+        const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+        floor.rotation.x = -Math.PI / 2; // Кладем на пол
+        floor.receiveShadow = true;
+        scene.add(floor);
+
+        // Добавим простую сетку на пол, чтобы чувствовать скорость и расстояние
+        const gridHelper = new THREE.GridHelper(100, 50, 0x45f3ff, 0x252b36);
+        gridHelper.position.y = 0.01; // Чуть выше пола, чтобы не мигало
+        scene.add(gridHelper);
+
+        // 4. СОЗДАНИЕ 3D ПЕРСОНАЖА (Игрок)
+        const playerGeometry = new THREE.BoxGeometry(2, 2, 2); // Куб размером 2х2х2 метра
+        const playerMaterial = new THREE.MeshStandardMaterial({ color: 0x00ffcc, roughness: 0.3, metalness: 0.2 });
+        const player = new THREE.Mesh(playerGeometry, playerMaterial);
+        player.position.y = 1; // Поднимаем куб, чтобы он стоял НА земле, а не проваливался наполовину
+        player.castShadow = true;
+        scene.add(player);
+
+        // 5. УПРАВЛЕНИЕ КЛАВИАТУРОЙ
+        const keys = {};
+        const playerSpeed = 0.3;
+
+        window.addEventListener('keydown', (e) => { keys[e.code] = true; });
+        window.addEventListener('keyup', (e) => { keys[e.code] = false; });
+
+        // 6. ИГРОВОЙ ЦИКЛ (Обновление кадров)
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Логика движения персонажа
+            if (keys['KeyW'] || keys['ArrowUp']) {
+                player.position.z -= playerSpeed; // Движение вперед (вглубь экрана)
+            }
+            if (keys['KeyS'] || keys['ArrowDown']) {
+                player.position.z += playerSpeed; // Движение назад
+            }
+            if (keys['KeyA'] || keys['ArrowLeft']) {
+                player.position.x -= playerSpeed; // Движение влево
+            }
+            if (keys['KeyD'] || keys['ArrowRight']) {
+                player.position.x += playerSpeed; // Движение вправо
+            }
+
+            // Камера плавно следует за кубом-персонажем
+            camera.position.x = player.position.x;
+            camera.position.z = player.position.z + 25; // Держим дистанцию сзади
+            camera.lookAt(player.position);
+
+            // Отрендерить сцену
+            renderer.render(scene, camera);
+        }
+
+        // Поддержка изменения размеров окна браузера
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Запуск анимации
+        animate();
+    </script>
 </body>
 </html>
 

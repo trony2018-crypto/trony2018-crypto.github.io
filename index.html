@@ -1,20 +1,176 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
+    <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="tUZgnRuVb3T6g6v-G6kdM5ZSDvsxjGFrSP-NoYCAh1s" />
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Играть в игры онлайн бесплатно — Лучшие браузерные игры без скачивания</title>
+    <title>Play Free Online Games — Best Browser Games No Download</title>
+    
     <style>
-        body { font-family: sans-serif; background-color: #0f111a; color: #ffffff; text-align: center; }
-        .game-container { background: #1e2235; border: 3px solid #00ffcc; padding: 20px; display: inline-block; }
-        iframe { border: none; max-width: 100%; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #0b0c10; 
+            color: #c5c6c7; 
+            text-align: center; 
+            padding: 20px; 
+            margin: 0;
+        }
+        h1 { 
+            color: #66fcf1; 
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+            text-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+        }
+        .subtitle {
+            color: #45f3ff;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        .games-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .game-card { 
+            background: #1f2833; 
+            border: 2px solid #45f3ff; 
+            border-radius: 16px; 
+            padding: 20px; 
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+        }
+        .game-card h2 {
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 1.6rem;
+        }
+        .iframe-wrapper {
+            position: relative;
+            width: 100%;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        /* Пропорции для экрана игры (16:9) */
+        .ratio-16-9 {
+            padding-top: 56.25%; 
+        }
+        iframe { 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none; 
+        }
+        .controls {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        .fullscreen-btn {
+            background-color: #66fcf1;
+            color: #0b0c10;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(102, 252, 241, 0.3);
+        }
+        .fullscreen-btn:hover {
+            background-color: #45f3ff;
+            transform: scale(1.05);
+        }
+        .seo-section { 
+            max-width: 860px; 
+            margin: 60px auto 20px auto; 
+            background: #151a21;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: left;
+            line-height: 1.8; 
+            color: #9aa0a6;
+            border-left: 4px solid #66fcf1;
+        }
+        .seo-section h3 {
+            color: #66fcf1;
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
-    <h1>Бесплатные Онлайн Игры</h1>
-    <div class="game-container">
-        <iframe src="https://play-pac-man.github.io/" width="800" height="500"></iframe>
+
+    <h1>Free Online Games Hub</h1>
+    <p class="subtitle">Welcome to trony2018-crypto game portal! Play the best browser games instantly.</p>
+
+    <div class="games-grid">
+        
+        <!-- GAME 1: PACMAN -->
+        <div class="game-card">
+            <h2>1. Retro Classic: Pac-Man</h2>
+            <div class="iframe-wrapper ratio-16-9">
+                <iframe id="game-pacman" src="https://github.io" allowfullscreen></iframe>
+            </div>
+            <div class="controls">
+                <button class="fullscreen-btn" onclick="openFullscreen('game-pacman')">🖵 Open Fullscreen</button>
+            </div>
+        </div>
+
+        <!-- GAME 2: 2048 -->
+        <div class="game-card">
+            <h2>2. Puzzle: 2048 Legend</h2>
+            <div class="iframe-wrapper ratio-16-9">
+                <iframe id="game-2048" src="https://play2048.co" allowfullscreen></iframe>
+            </div>
+            <div class="controls">
+                <button class="fullscreen-btn" onclick="openFullscreen('game-2048')">🖵 Open Fullscreen</button>
+            </div>
+        </div>
+
+        <!-- GAME 3: FLAPPY BIRD -->
+        <div class="game-card">
+            <h2>3. Arcade: Flappy Bird</h2>
+            <div class="iframe-wrapper ratio-16-9">
+                <iframe id="game-flappy" src="https://flappybird.io" allowfullscreen></iframe>
+            </div>
+            <div class="controls">
+                <button class="fullscreen-btn" onclick="openFullscreen('game-flappy')">🖵 Open Fullscreen</button>
+            </div>
+        </div>
+
     </div>
+
+    <!-- SEO Text in English for Google Search Robots -->
+    <div class="seo-section">
+        <h3>How to play free browser games online?</h3>
+        <p>Our gaming platform offers the ultimate collection of top HTML5 games you can play directly in your web browser. No registration, no downloads, and no installation required! Whether you love retro arcade simulators, logical mathematical puzzles, or fast-paced casual games, we have it all. Click the "Open Fullscreen" button under any game box to enjoy a distraction-free immersive gaming experience. All games are completely optimized for PC, laptops, and mobile screens. Enjoy your stay and have fun on our safe website!</p>
+    </div>
+
+    <!-- Script for Fullscreen functionality -->
+    <script>
+        function openFullscreen(id) {
+            var element = document.getElementById(id);
+            if (element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if (element.mozRequestFullScreen) { /* Firefox */
+                element.mozRequestFullScreen();
+            } else if (element.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                element.webkitRequestFullscreen();
+            } else if (element.msRequestFullscreen) { /* IE/Edge */
+                element.msRequestFullscreen();
+            }
+        }
+    </script>
+
 </body>
 </html>
+
